@@ -13,7 +13,7 @@ Você irá alugar e devolver boardgames no AluGames
 
 ## Quer jogar ?
 
-Acesse o jogo pelo link [JOGAR AQUI](https://number-drawer-kappa.vercel.app/)
+Acesse o jogo pelo link : EM BREVE LINK AQUI
 
 ## Quer aprender a desenvolver sistemas assim como eu ?
 
