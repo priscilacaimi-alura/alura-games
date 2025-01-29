@@ -15,6 +15,8 @@ Você irá alugar e devolver boardgames no AluGames
 
 Acesse o jogo pelo link : EM BREVE LINK AQUI
 
+<img src="./img/picture_game.png">
+
 ## Quer aprender a desenvolver sistemas assim como eu ?
 
 Utilize meu cupom de desconto na [Alura com 15% OFF](https://www.alura.com.br/indica-dev/priscilacaimi)

@@ -1,6 +1,8 @@
 let rentTextButton = "Alugar"
 let returnTextButton = "Devolver"
 
+quantityOfRentGames()
+
 /**
  * 
  * @param {*} id item a ser alugado ou devolvido
@@ -12,7 +14,7 @@ function startRent(id) {
     let botao = gameClicado.querySelector('.dashboard__item__button');
 
     if (imagem.classList.contains('dashboard__item__img--rented')) {
-        setNewStatus(imagem, botao, 'dashboard__item__img--rented', 'dashboard__item__button--return', rentTextButton)
+        confirmButton(imagem, botao, rentTextButton)
     } else {
         setNewStatus(imagem, botao, 'dashboard__item__img--rented', 'dashboard__item__button--return', returnTextButton)
     }
@@ -27,7 +29,7 @@ function startRent(id) {
  */
 function setNewStatus(imagem, botao, imageClass, buttonClass, newStatus) {
 
-    if (newStatus === 'Alugar' ) {
+    if (newStatus === 'Alugar') {
         imagem.classList.remove(imageClass);
         botao.classList.remove(buttonClass);
         botao.textContent = 'Alugar';
@@ -36,4 +38,28 @@ function setNewStatus(imagem, botao, imageClass, buttonClass, newStatus) {
         botao.classList.add(buttonClass);
         botao.textContent = 'Devolver';
     }
+}
+
+/**
+ * 
+ * @param {*} imagem 
+ * @param {*} botao 
+ * @param {*} rentTextButton texto para alterar o botão
+ */
+function confirmButton(imagem, botao, rentTextButton) {
+    if (confirm("Você deseja devolver o game?")) {
+        setNewStatus(imagem, botao, 'dashboard__item__img--rented', 'dashboard__item__button--return', rentTextButton)
+    }
+}
+
+function quantityOfRentGames() {
+    let quantityRent = 0;
+    let quantityBook = 0;
+    let allItems = document.querySelectorAll("ul li[class=dashboard__items__item] a")
+    allItems.forEach((item=>{
+        if(item.innerHTML === 'Alugar') quantityRent=quantityRent+1
+        else quantityBook=quantityBook+1
+    }))
+    console.log(`Games disponíveis:${quantityRent} - Games alugados: ${quantityBook}`)
+
 }
